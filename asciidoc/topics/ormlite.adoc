@@ -1,0 +1,40 @@
+= ORMLite Java ORM
+
+
+TableUtils Class ::
+. **createTable()** – to create a table based on a entity class definition or a DatabaseTableConfig object
+. **createTableIfNotExists()** – similar to the previous method, except it will only create the table if it doesn't exist; this only works on databases that support it
+. **dropTable()** – to delete a table
+. **clearTable()** – to delete the data from a table
+
+
+DAO Objects :: DaoManager class that can create DAO objects for us with CRUD functionality
+
+```java
+Dao<Account,String> accountDao = DaoManager.createDao(connectionSource, Account.class);
+
+String name = "Touhid Mia";
+Account account = new Account(name, "_secret");
+accountDao.create(account);
+
+Account result = accountDao.queryForId(1L);
+
+result.setName("Touhid");
+result.update(library);
+
+
+accountDao.forEach( account -> {
+    System.out.println(account.getName());
+});
+
+
+result.delete(result);
+```
+
+
+
+
+{blank} +
+
+.References
+. https://www.baeldung.com/ormlite

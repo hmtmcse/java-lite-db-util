@@ -10,6 +10,7 @@ public class Account {
 
     @DatabaseField(id = true)
     private String name;
+
     @DatabaseField
     private String password;
 
