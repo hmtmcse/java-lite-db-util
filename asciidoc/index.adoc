@@ -1,4 +1,4 @@
-= Java Lite Database 1.0.0
+= Java Lite Database
 H.M.Touhid Mia
 :toc:
 
